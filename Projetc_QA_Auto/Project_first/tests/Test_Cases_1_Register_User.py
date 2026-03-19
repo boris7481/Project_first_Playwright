@@ -81,4 +81,5 @@ def test_Cases_1_Register_User_firefox(playwright: Playwright):
     expect(page.get_by_text("Logged in as 09w0823@Freedom")).to_be_visible()
     page.get_by_role("link", name=" Delete Account").click()
     expect(page.get_by_text("ACCOUNT DELETED!")).to_be_visible()
+    firefoxBrowser.close()
     time.sleep(10)  # this is only to see the step better
