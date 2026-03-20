@@ -6,7 +6,7 @@ faker = Faker()
 
 from playwright.sync_api import Page, expect, Playwright
 
-
+# ---#termes = ID ,   .terms = class
 def test_login_User_with_incorrect_email_and_password(page: Page):
     page.goto("https://www.automationexercise.com/")
     expect(page.get_by_text("Video Tutorials")).to_be_visible()

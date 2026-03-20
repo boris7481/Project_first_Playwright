@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect, Playwright
 
 import time
 
-
+# ---#termes = ID ,   .terms = class
 # Test Case 5: Register User with existing email
 def test_Register_User_with_existing_emai(page: Page):
     page.goto("https://www.automationexercise.com/")
@@ -14,6 +14,9 @@ def test_Register_User_with_existing_emai(page: Page):
     page.locator('[data-qa="signup-email"]').fill("freedomvision@gmail.com")
     page.locator('[data-qa="signup-button"]').click()
     expect(page.get_by_text("Email Address already exist")).to_be_visible()
+    expect(page.get_by_text("Success! Your details have been submitted successfully")).to_be_visible()
+    page.get_by_role("link", name="Home").click()
+
     time.sleep(4)
 
 

@@ -54,3 +54,4 @@ def test_Contact_Us_Form_firefox(playwright: Playwright):
     page.get_by_role("link", name=" Home").click()
     expect(page.get_by_text("Features Items")).to_be_visible()
     time.sleep(4)
+    firefoxBrowser.close()
